@@ -24,5 +24,7 @@ def get_cats_info(path):
 
 
 if __name__ == "__main__":
-    cats_info = get_cats_info("cats.txt")
+    from pathlib import Path
+
+    cats_info = get_cats_info(Path(__file__).parent / "cats.txt")
     print(cats_info)

@@ -15,7 +15,7 @@ def print_directory_tree(directory: Path, indent: str = "") -> None:
         directory: The Path object of the directory to display.
         indent: The current indentation string for nested items.
     """
-    items = sorted(directory.iterdir(), key=lambda p: (p.is_file(), p.name))
+    items = sorted(directory.iterdir(), key=lambda p: p.name.lower())
     for item in items:
         if item.is_dir():
             print(indent + Fore.BLUE + Style.BRIGHT + item.name + "/")
